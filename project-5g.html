@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interface 5G AI-powered — Med Yassine Britel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-row">
+    <a href="index.html#top" class="nav-mark"><span class="dot"></span> M. Y. Britel</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">Profil</a></li>
+      <li><a href="index.html#experience">Expérience</a></li>
+      <li><a href="index.html#projects">Projets</a></li>
+      <li><a href="index.html#skills">Compétences</a></li>
+      <li><a href="index.html#education">Formation</a></li>
+    </ul>
+    <a href="index.html#contact" class="nav-cta">Contact</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="project-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="index.html#projects">← Retour aux projets</a></div>
+      <span class="eyebrow-line"><span class="seg"></span> PROJET 01 — RÉSEAU / IA</span>
+      <h1>Interface 5G AI-powered</h1>
+      <p class="hero-lead">Une interface de supervision réseau qui intègre un assistant IA au cœur du diagnostic 5G — pensée pour que chaque action reste rapide, sécurisée et limitée au rôle de son opérateur.</p>
+
+      <div class="spec-strip">
+        <div class="spec-cell">
+          <span class="label mono">RÔLE</span>
+          <span class="value">Conception &amp; développement complet</span>
+        </div>
+        <div class="spec-cell">
+          <span class="label mono">CONTEXTE</span>
+          <span class="value">ATL Communications · Future Networx</span>
+        </div>
+        <div class="spec-cell">
+          <span class="label mono">STACK PRINCIPALE</span>
+          <span class="value">AngularJS, Node.js, Grafana</span>
+        </div>
+        <div class="spec-cell">
+          <span class="label mono">DÉPÔT</span>
+          <span class="value"><a href="https://github.com/britek2001/5GOSS" target="_blank" rel="noopener" style="border-bottom:1px solid var(--ink);">5GOSS (privé) ↗</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <div class="pb-block">
+      <h2>Le problème</h2>
+      <p>Les équipes réseau qui opèrent un Cœur 5G doivent surveiller en continu l'état de l'architecture, diagnostiquer des anomalies de latence ou de sécurité, et intervenir via une CLI peu accessible aux profils non-experts. Chaque intervention manuelle est lente et sujette à l'erreur humaine, en particulier lorsqu'elle touche à des actions sensibles du réseau.</p>
+      <p>L'objectif : donner à des opérateurs de niveaux d'expertise différents un outil unique pour observer, diagnostiquer et agir sur le réseau — sans sacrifier la sécurité ni la performance.</p>
+    </div>
+
+    <div class="pb-block">
+      <h2>L'approche</h2>
+      <div class="two-col">
+        <div>
+          <p><strong style="color:var(--ink)">Interface de contrôle.</strong> Une interface web AngularJS reconstruit visuellement l'état de l'architecture du Cœur 5G et expose l'ensemble des fonctionnalités CLI dans un format lisible, avec monitoring en temps réel du réseau.</p>
+          <p><strong style="color:var(--ink)">Assistant IA de diagnostic.</strong> Un modèle fine-tuné assiste l'opérateur dans le diagnostic et la résolution des problèmes réseau : il interprète les signaux de latence et de sécurité remontés par Grafana et Prometheus, et propose des actions correctives.</p>
+        </div>
+        <div>
+          <p><strong style="color:var(--ink)">Contrôle par rôle.</strong> Chaque action déclenchable depuis l'interface — y compris celles suggérées par l'assistant IA — est limitée par un système RBAC : un opérateur ne peut exécuter que les actions autorisées par son rôle, ce qui évite qu'une recommandation du modèle ne devienne une action non supervisée.</p>
+          <p><strong style="color:var(--ink)">Architecture optimisée.</strong> L'ensemble a été pensé pour garantir performance et sécurité du réseau, avec une séparation claire entre la couche de lecture (monitoring) et la couche d'action (contrôle du Cœur 5G).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pb-block">
+      <h2>Schéma d'architecture</h2>
+      <div class="arch-diagram">
+        <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; font-family:'IBM Plex Mono', monospace;">
+          <!-- connecting lines -->
+          <line x1="130" y1="70" x2="330" y2="70" stroke="#B9B2A0" stroke-width="1"/>
+          <line x1="130" y1="150" x2="330" y2="150" stroke="#B9B2A0" stroke-width="1"/>
+          <line x1="130" y1="230" x2="330" y2="230" stroke="#B9B2A0" stroke-width="1"/>
+          <line x1="430" y1="70" x2="430" y2="230" stroke="#B9B2A0" stroke-width="1"/>
+          <line x1="430" y1="150" x2="600" y2="150" stroke="#0E7C86" stroke-width="1.4"/>
+          <line x1="700" y1="150" x2="800" y2="150" stroke="#0E7C86" stroke-width="1.4"/>
+
+          <!-- data sources -->
+          <rect x="10" y="50" width="120" height="40" fill="none" stroke="#10192B"/>
+          <text x="70" y="74" text-anchor="middle" font-size="11" fill="#10192B">Cœur 5G</text>
+
+          <rect x="10" y="130" width="120" height="40" fill="none" stroke="#10192B"/>
+          <text x="70" y="154" text-anchor="middle" font-size="11" fill="#10192B">Grafana</text>
+
+          <rect x="10" y="210" width="120" height="40" fill="none" stroke="#10192B"/>
+          <text x="70" y="234" text-anchor="middle" font-size="11" fill="#10192B">Prometheus</text>
+
+          <!-- interface layer -->
+          <rect x="330" y="40" width="100" height="220" fill="none" stroke="#10192B"/>
+          <text x="380" y="35" text-anchor="middle" font-size="10" fill="#5B6472">INTERFACE</text>
+          <text x="380" y="145" text-anchor="middle" font-size="11" fill="#10192B" transform="rotate(-90 380 150)">AngularJS · CLI + monitoring</text>
+
+          <!-- AI assistant -->
+          <rect x="600" y="115" width="100" height="70" fill="none" stroke="#0E7C86" stroke-width="1.4"/>
+          <text x="650" y="145" text-anchor="middle" font-size="11" fill="#063A40">Assistant IA</text>
+          <text x="650" y="160" text-anchor="middle" font-size="9" fill="#063A40">diagnostic</text>
+
+          <!-- RBAC gate -->
+          <rect x="800" y="115" width="90" height="70" fill="none" stroke="#D8952E" stroke-width="1.4"/>
+          <text x="845" y="145" text-anchor="middle" font-size="11" fill="#8a5c14">RBAC</text>
+          <text x="845" y="160" text-anchor="middle" font-size="9" fill="#8a5c14">contrôle rôle</text>
+
+          <text x="380" y="290" text-anchor="middle" font-size="9" fill="#5B6472">flux de supervision</text>
+          <text x="720" y="290" text-anchor="middle" font-size="9" fill="#0E7C86">flux de diagnostic &amp; action</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="pb-block">
+      <h2>Ce que j'ai livré</h2>
+      <ul>
+        <li>Une interface de laboratoire 5G complète, avec accès à l'ensemble des fonctionnalités CLI et à l'état de l'architecture du Cœur 5G en temps réel.</li>
+        <li>Un fine-tuning de modèle dédié au diagnostic réseau, intégré comme assistant IA dans l'interface.</li>
+        <li>Un système de contrôle RBAC limitant les actions utilisateur — humaines ou suggérées par l'IA — selon le rôle de l'opérateur.</li>
+        <li>Une interface d'alerte pour le traitement des données et la détection d'anomalies de sécurité et de latence, connectée à Grafana et Prometheus.</li>
+      </ul>
+      <div class="stack-pills">
+        <span class="tag">AngularJS</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Grafana</span>
+        <span class="tag">Prometheus</span>
+        <span class="tag">RBAC / IAM</span>
+        <span class="tag">Fine-tuning LLM</span>
+        <span class="tag">TLS / AES-256</span>
+      </div>
+    </div>
+
+  </div>
+
+  <section id="contact" class="contact-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-index">→</span>
+        <h2>Envie d'en discuter ?</h2>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <p class="contact-lead">Je peux détailler l'architecture, les choix de sécurité, ou le fine-tuning du modèle de diagnostic.</p>
+          <a href="mailto:britelyassine47@gmail.com" class="btn btn-primary">Envoyer un email</a>
+        </div>
+        <ul class="contact-list">
+          <li><span>Email</span><a href="mailto:britelyassine47@gmail.com">britelyassine47@gmail.com</a></li>
+          <li><span>GitHub</span><a href="https://github.com/britek2001" target="_blank" rel="noopener">britek2001</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Med Yassine Britel</span>
+        <span><a href="index.html#top" style="color:inherit;">← Retour au portfolio</a></span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
